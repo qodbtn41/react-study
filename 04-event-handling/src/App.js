@@ -4,7 +4,7 @@ import EventPractice from "./EventPractice";
 import EventPracticeClass from "./EventPracticeClass";
 
 function App() {
-  return <EventPracticeClass />;
+  return <EventPractice />;
 }
 
 export default App;
