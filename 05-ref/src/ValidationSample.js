@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import "./ValidationSample.css";
 
 class ValidationSample extends Component {
+  input = React.createRef();
   state = {
     password: "",
     clicked: false,
     validated: false,
+  };
+
+  handleFocus = () => {
+    this.input.current.focus();
   };
 
   handleChange = (e) => {
@@ -19,6 +24,7 @@ class ValidationSample extends Component {
       clicked: true,
       validated: this.state.password === "0000",
     });
+    this.handleFocus();
   };
 
   render() {
@@ -29,6 +35,7 @@ class ValidationSample extends Component {
           value={this.state.password}
           onChange={this.handleChange}
           className={this.state.clicked ? (this.state.validated ? "success" : "failure") : ""}
+          ref={this.input}
         />
         <button onClick={this.handleButtonClick}>검증하기</button>
       </div>
