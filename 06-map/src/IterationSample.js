@@ -9,8 +9,34 @@ const IterationSample = () => {
   ]);
   const [inputText, setInputText] = useState("");
   const [nextId, setNextId] = useState(5);
-  const nameList = names.map((name) => <li key={name.id}>{name.text}</li>);
-  return <ul>{nameList}</ul>;
+  const nameList = names.map((name) => (
+    <li key={name.id} onDoubleClick={() => onDoubleClick(name.id)}>
+      {name.text}
+    </li>
+  ));
+
+  const onChange = (e) => setInputText(e.target.value);
+  const onClick = (e) => {
+    var nextNames = names.concat({
+      id: nextId,
+      text: inputText,
+    });
+    setNames(nextNames);
+    setInputText("");
+    setNextId(nextId + 1);
+  };
+  const onDoubleClick = (id) => {
+    var nextNames = names.filter((name) => name.id !== id);
+    setNames(nextNames);
+  };
+
+  return (
+    <>
+      <input value={inputText} onChange={onChange} />
+      <button onClick={onClick}>추가</button>
+      <ul>{nameList}</ul>
+    </>
+  );
 };
 
 export default IterationSample;
