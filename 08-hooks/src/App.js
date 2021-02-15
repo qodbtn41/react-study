@@ -6,7 +6,8 @@ import Info from "./Info";
 function App() {
   // const [visible, setVisible] = useState(false);
 
-  return <Counter />;
+  // return <Counter />;
+  return <Info />;
   // return (
   //   <div>
   //     <button
