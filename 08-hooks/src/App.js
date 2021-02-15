@@ -7,8 +7,8 @@ import Info from "./Info";
 function App() {
   // const [visible, setVisible] = useState(false);
 
-  return <Average />;
-  // return <Info />;
+  // return <Average />;
+  return <Info />;
   // return <Counter />;
   // return (
   //   <div>

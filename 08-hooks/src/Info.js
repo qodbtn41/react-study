@@ -1,23 +1,28 @@
 import React, { useEffect, useReducer, useState } from "react";
+import useInputs from "./useInputs";
 
-function reducer(state, action) {
-  // 객체 업데이트 시 사용하는 문법
-  // 기존 객체 + 변경된 값 추가 반영
-  return {
-    ...state,
-    [action.name]: action.value,
-  };
-}
+// function reducer(state, action) {
+//   // 객체 업데이트 시 사용하는 문법
+//   // 기존 객체 + 변경된 값 추가 반영
+//   return {
+//     ...state,
+//     [action.name]: action.value,
+//   };
+// }
 
 const Info = () => {
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, onChange] = useInputs({
     name: "",
     nickname: "",
   });
+  // const [state, dispatch] = useReducer(reducer, {
+  //   name: "",
+  //   nickname: "",
+  // });
   const { name, nickname } = state;
-  const onChange = (e) => {
-    dispatch(e.target);
-  };
+  // const onChange = (e) => {
+  //   dispatch(e.target);
+  // };
   // const [name, setName] = useState("");
   // const [nickname, setNickname] = useState("");
 
