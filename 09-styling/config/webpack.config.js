@@ -478,6 +478,7 @@ module.exports = function (webpackEnv) {
                     includePaths: [paths.appSrc + "/styles"],
                   },
                   sourceMap: isEnvProduction && shouldUseSourceMap,
+                  additionalData: `@import 'utils';`,
                 },
               }),
               // Don't consider CSS imports dead code even if the
