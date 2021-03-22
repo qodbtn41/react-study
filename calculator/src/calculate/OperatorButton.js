@@ -1,7 +1,8 @@
 import React from "react";
+import "./OperatorButton.scss";
 
 const OperatorButton = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className="OperatorButton">{children}</div>;
 };
 
 export default OperatorButton;
